@@ -13,6 +13,8 @@ CREATE TABLE victims (
     county varchar(20)   NOT NULL,
     city varchar(20)   NOT NULL,
     accident_year int   NOT NULL
+    safety_equip_used var_char(4) NOT NULL
+    severe_injury int NOT NULL
 );
 
 CREATE TABLE parties (case_id int NOT NULL, 
@@ -34,6 +36,7 @@ CREATE TABLE parties (case_id int NOT NULL,
     stwd_vehicle_type varchar(4)   NOT NULL,
     race varchar(4)   NOT NULL,
     accident_year int   NOT NULL
+    SAFETY_EQUIP_USED varchar(4) NOT NULL
 );
 
 CREATE TABLE crashes (
