@@ -12,13 +12,16 @@ CREATE TABLE victims (
     victim_ejected varchar(4)   NOT NULL,
     county varchar(20)   NOT NULL,
     city varchar(20)   NOT NULL,
-    accident_year int   NOT NULL
-    safety_equip_used var_char(4) NOT NULL
-    severe_injury int NOT NULL
+    accident_year int   NOT NULL,
+    safety_equip_used varchar(4) NOT NULL,
+    severe_injury int NOT NULL,
+    party_id int NOT NULL
 );
 
-CREATE TABLE parties (case_id int NOT NULL, 
-	party_number int NOT NULL, 
+CREATE TABLE parties (
+    party_id int NOT NULL, 
+    case_id int NOT NULL, 
+    party_number int NOT NULL, 
     party_type varchar(4) NOT NULL,
     at_fault varchar(4)  NOT NULL,
     party_sex varchar(4)   NOT NULL,
@@ -35,8 +38,11 @@ CREATE TABLE parties (case_id int NOT NULL,
     vehicle_make varchar(40)   NOT NULL,
     stwd_vehicle_type varchar(4)   NOT NULL,
     race varchar(4)   NOT NULL,
-    accident_year int   NOT NULL
-    SAFETY_EQUIP_USED varchar(4) NOT NULL
+    accident_year int   NOT NULL,
+    safety_equip_used varchar(4) NOT NULL,
+    CONSTRAINT pk_parties PRIMARY KEY (
+        party_id
+     )
 );
 
 CREATE TABLE crashes (
@@ -82,8 +88,8 @@ CREATE TABLE crashes (
      )
 );
 
-ALTER TABLE victims ADD CONSTRAINT fk_victims_case_id FOREIGN KEY(case_id)
-REFERENCES crashes (case_id);
+ALTER TABLE victims ADD CONSTRAINT fk_victims_case_id FOREIGN KEY(party_id)
+REFERENCES parties (party_id);
 
 ALTER TABLE parties ADD CONSTRAINT fk_parties_case_id FOREIGN KEY(case_id)
 REFERENCES crashes (case_id);
