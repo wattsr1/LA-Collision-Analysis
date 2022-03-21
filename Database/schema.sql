@@ -94,16 +94,69 @@ REFERENCES parties (party_id);
 ALTER TABLE parties ADD CONSTRAINT fk_parties_case_id FOREIGN KEY(case_id)
 REFERENCES crashes (case_id);
 
-CREATE TABLE collision_data_ml AS
-	SELECT crashes.accident_year, crashes.collision_time, crashes.day_of_week,
-	crashes.weather_1, crashes.primary_coll_factor, crashes.type_of_collision,
-	crashes.road_surface, crashes.road_cond_1, crashes.lighting, crashes.point_x, crashes.point_y,
-	parties.party_number, parties.at_fault, parties.party_sex, parties.party_age, parties.party_soberiety,
-	parties.party_safety_equip_1, parties.party_safety_equip_2, parties.oaf_1, parties.party_number_killed,
-	parties.party_number_injured, parties.move_pre_acc, parties.vehicle_year, parties.vehicle_make, 
-	parties.stwd_vehicle_type, parties.race
-	FROM parties
-	INNER JOIN crashes
-	ON parties.case_id = crashes.case_id;
+SELECT * FROM parties;
 
-SELECT * FROM collision_data_ml
+DROP TABLE collision_data_ml;
+
+CREATE TABLE collision_data_ml AS
+	SELECT crashes.collision_time, crashes.day_of_week,
+	crashes.weather_1, crashes.type_of_collision,
+	crashes.road_surface, crashes.road_cond_1, crashes.lighting, crashes.point_x, crashes.point_y,
+	parties.at_fault, parties.party_soberiety, parties.oaf_1, parties.party_number_killed,
+	parties.party_number_injured, parties.move_pre_acc, parties.vehicle_year, parties.stwd_vehicle_type, 
+	parties.race, victims.victim_age, victims.victim_sex, victims.victim_role, 
+	victims.safety_equip_used, victims.victim_seating_postion, victims.victim_ejected, victims.severe_injury
+	FROM crashes
+	INNER JOIN parties ON crashes.case_id = parties.case_id
+	INNER JOIN victims ON parties.party_id = victims.party_id;
+
+SELECT * FROM collision_data_ml;
+
+DROP TABLE collision_data_ml_auto;
+DROP TABLE collision_data_ml_mc;
+DROP TABLE collision_data_ml_truck;
+
+CREATE TABLE collision_data_ml_auto AS
+	SELECT crashes.collision_time, crashes.day_of_week,
+	crashes.weather_1, crashes.type_of_collision,
+	crashes.road_surface, crashes.road_cond_1, crashes.lighting, crashes.point_x, crashes.point_y,
+	parties.at_fault, parties.party_soberiety, parties.oaf_1, parties.party_number_killed,
+	parties.party_number_injured, parties.move_pre_acc, parties.vehicle_year, parties.stwd_vehicle_type, 
+	parties.race, victims.victim_age, victims.victim_sex, victims.victim_role, 
+	victims.safety_equip_used, victims.victim_seating_postion, victims.victim_ejected, victims.severe_injury
+	FROM crashes
+	INNER JOIN parties ON crashes.case_id = parties.case_id
+	INNER JOIN victims ON parties.party_id = victims.party_id
+	WHERE parties.stwd_vehicle_type = 'A' AND parties.vehicle_year > '2010';
+
+SELECT * FROM collision_data_ml_auto;
+
+CREATE TABLE collision_data_ml_mc AS
+	SELECT crashes.collision_time, crashes.day_of_week,
+	crashes.weather_1, crashes.type_of_collision,
+	crashes.road_surface, crashes.road_cond_1, crashes.lighting, crashes.point_x, crashes.point_y,
+	parties.at_fault, parties.party_soberiety, parties.oaf_1, parties.party_number_killed,
+	parties.party_number_injured, parties.move_pre_acc, parties.vehicle_year, parties.stwd_vehicle_type, 
+	parties.race, victims.victim_age, victims.victim_sex, victims.victim_role, 
+	victims.safety_equip_used, victims.victim_seating_postion, victims.victim_ejected, victims.severe_injury
+	FROM crashes
+	INNER JOIN parties ON crashes.case_id = parties.case_id
+	INNER JOIN victims ON parties.party_id = victims.party_id
+	WHERE parties.stwd_vehicle_type = 'C' AND parties.vehicle_year > '2010';
+
+SELECT * FROM collision_data_ml_mc;
+
+CREATE TABLE collision_data_ml_truck AS
+	SELECT crashes.collision_time, crashes.day_of_week,
+	crashes.weather_1, crashes.type_of_collision,
+	crashes.road_surface, crashes.road_cond_1, crashes.lighting, crashes.point_x, crashes.point_y,
+	parties.at_fault, parties.party_soberiety, parties.oaf_1, parties.party_number_killed,
+	parties.party_number_injured, parties.move_pre_acc, parties.vehicle_year, parties.stwd_vehicle_type, 
+	parties.race, victims.victim_age, victims.victim_sex, victims.victim_role, 
+	victims.safety_equip_used, victims.victim_seating_postion, victims.victim_ejected, victims.severe_injury
+	FROM crashes
+	INNER JOIN parties ON crashes.case_id = parties.case_id
+	INNER JOIN victims ON parties.party_id = victims.party_id
+	WHERE parties.stwd_vehicle_type = 'D' AND parties.vehicle_year > '2010';
+
+SELECT * FROM collision_data_ml_truck;
