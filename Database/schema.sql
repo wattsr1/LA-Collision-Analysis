@@ -48,7 +48,8 @@ CREATE TABLE parties (
 CREATE TABLE crashes (
     case_id int   NOT NULL,
     accident_year int   NOT NULL,
-    collision_time int   NOT NULL,
+	collision_data date NOT NULL,
+    collision_time time NOT NULL,
     day_of_week int   NOT NULL,
     weather_1 varchar(4)   NOT NULL,
     tow_away varchar(4)   NOT NULL,
@@ -94,7 +95,9 @@ REFERENCES parties (party_id);
 ALTER TABLE parties ADD CONSTRAINT fk_parties_case_id FOREIGN KEY(case_id)
 REFERENCES crashes (case_id);
 
+SELECT * FROM crashes;
 SELECT * FROM parties;
+SELECT * FROM victims;
 
 DROP TABLE collision_data_ml;
 
@@ -127,7 +130,7 @@ CREATE TABLE collision_data_ml_auto AS
 	FROM crashes
 	INNER JOIN parties ON crashes.case_id = parties.case_id
 	INNER JOIN victims ON parties.party_id = victims.party_id
-	WHERE parties.stwd_vehicle_type = 'A' AND parties.vehicle_year > '2010';
+	WHERE parties.stwd_vehicle_type = 'A' AND parties.vehicle_year > '2000';
 
 SELECT * FROM collision_data_ml_auto;
 
@@ -142,7 +145,7 @@ CREATE TABLE collision_data_ml_mc AS
 	FROM crashes
 	INNER JOIN parties ON crashes.case_id = parties.case_id
 	INNER JOIN victims ON parties.party_id = victims.party_id
-	WHERE parties.stwd_vehicle_type = 'C' AND parties.vehicle_year > '2010';
+	WHERE parties.stwd_vehicle_type = 'C' AND parties.vehicle_year > '2000';
 
 SELECT * FROM collision_data_ml_mc;
 
@@ -157,6 +160,6 @@ CREATE TABLE collision_data_ml_truck AS
 	FROM crashes
 	INNER JOIN parties ON crashes.case_id = parties.case_id
 	INNER JOIN victims ON parties.party_id = victims.party_id
-	WHERE parties.stwd_vehicle_type = 'D' AND parties.vehicle_year > '2010';
+	WHERE parties.stwd_vehicle_type = 'D' AND parties.vehicle_year > '2000';
 
 SELECT * FROM collision_data_ml_truck;
