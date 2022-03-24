@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bellybutton Biodiversity</title>
+  <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body>     
+  <div class="container">
+    <nav class="navbar";>
+      <a class="navbar-brand mb-0 h1" href="https://github.com/wattsr1/LA_Collision_Analysis.git">Link to GitHub Repository
+      </a>
+    </nav>
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Accident Severity Analysis</h1>
+        <p>Machine Learning to Identify Accident Severity Factors</p>
+      </div>
+      <p> This project is looking at driver incidents to help vehicle manufacturers to evaluate what safety improvements would be the best to research and develop for the future based on the findings of accidents reported by the California Highway Patrol (CHP) in Los Angeles County. The data collected includes information about the incident including the severity of the accident and the safety equipment used. Based on the data collected the factors contributing to each incident will be evaluated to determine the most significant factors to resulting in severe and fatal incidents for cars, trucks and motorcycles. This data can then be used to identify what new safety features should be the focus for manufacturers for the future.
+    <div class="row">
+      <div class="col-md-3">
+        <div class="well">
+          <h3>Vehicle Type:</h3>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary" style="background-color: lightgrey">
+          <div class="panel-heading">
+            <h3 class="panel-title">Confusion Matrix</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5" >
+        <img src='topfeaturerankingauto.png'/>
+      </div>
+      <div class="col-md-4">
+        <img src='confusion_matrix_auto.png'/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <img src='classification_report.png'/>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
