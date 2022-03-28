@@ -187,6 +187,9 @@ Each analysis contained data that contains the accuracy, and sensitivity and pre
 Visualization of the data was prepared in Tableau to provide graphs illustrating patterns observed in the details provided from each accident.
 Users can filter on data visualizations to customize the interaction with the dataset.  The users can filter between the types of the automobile to view the results from the ML analysis and see the key factors that relate to the severity of accident data.
 
+The Dashboard can be viewed here [L.A. Collision Dashboard](https://public.tableau.com/app/profile/joseph.minutaglio/viz/LA_Collision/)
+
+
 ## Presentation Draft
 
 A brief presentation of the project has been drafted on Google Slides.  [The draft can be viewed online](https://docs.google.com/presentation/d/1KghLo6V3xyFp05sskCO4CUClffk0LA8iuVf46Gt23bM/edit?usp=sharing)
