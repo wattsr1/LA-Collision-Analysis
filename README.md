@@ -189,6 +189,7 @@ Users can filter on data visualizations to customize the interaction with the da
 
 The Dashboard can be viewed here [L.A. Collision Dashboard](https://public.tableau.com/app/profile/joseph.minutaglio/viz/LA_Collision/)
 
+The final dashboard will contain a Tableau story to summarize the project.  [Planning for the story is being developed using Google Slides](https://docs.google.com/presentation/d/1w6Vg1khr1k3L5puMNUuJ7pDtrvq1OjM4qtMz7u7uars/edit?usp=sharing)
 
 ## Presentation Draft
 
