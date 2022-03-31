@@ -1,16 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bellybutton Biodiversity</title>
-  <link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-  crossorigin="anonymous"
-  />
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <link rel="stylesheet" href="./static/css/style.css">
 </head>
 <body>     
@@ -24,36 +21,102 @@
         <h1>Accident Severity Analysis</h1>
         <p>Machine Learning to Identify Accident Severity Factors</p>
       </div>
+    </div>
       <p> This project is looking at driver incidents to help vehicle manufacturers to evaluate what safety improvements would be the best to research and develop for the future based on the findings of accidents reported by the California Highway Patrol (CHP) in Los Angeles County. The data collected includes information about the incident including the severity of the accident and the safety equipment used. Based on the data collected the factors contributing to each incident will be evaluated to determine the most significant factors to resulting in severe and fatal incidents for cars, trucks and motorcycles. This data can then be used to identify what new safety features should be the focus for manufacturers for the future.
-    <div class="row">
-      <div class="col-md-3">
-        <div class="well">
-          <h3>Vehicle Type:</h3>
-          <!-- <select id="selDataset"></select> -->
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
-        <div class="panel panel-primary" style="background-color: lightgrey">
-          <div class="panel-heading">
-            <h3 class="panel-title">Confusion Matrix</h3>
-          </div>
-          <div id="sample-metadata" class="panel-body"></div>
-        </div>
+      </p>
+    </div>
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="pills-collision-tab" data-toggle="pill" href="#pills-collision" role="tab" aria-controls="pills-collision" aria-selected="true">Collision Data</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="pills-accident-tab" data-toggle="pill" href="#pills-accident" role="tab" aria-controls="pills-accident" aria-selected="false">Accident Details</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="pills-car-tab" data-toggle="pill" href="#pills-car" role="tab" aria-controls="pills-car" aria-selected="false">ML Passenger Car</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="pills-truck-tab" data-toggle="pill" href="#pills-truck" role="tab" aria-controls="pills-truck" aria-selected="false">ML Pickup Truck</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="pills-mc-tab" data-toggle="pill" href="#pills-mc" role="tab" aria-controls="pills-mc" aria-selected="false">ML Motorcycle</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="pills-severity-tab" data-toggle="pill" href="#pills-severity" role="tab" aria-controls="pills-severity" aria-selected="false">Collision Severity</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-collision" role="tabpanel" aria-labelledby="v-pills-collision-tab">
+        <div class='tableauPlaceholder' id='viz1648659369924' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;LA&#47;LA_Collision_Dashboard&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='LA_Collision_Dashboard&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;LA&#47;LA_Collision_Dashboard&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1648659369924');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1427px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
       </div>
-      <div class="col-md-5" >
-        <img src='topfeaturerankingauto.png'/>
+      <div class="tab-pane fade" id="pills-accident" role="tabpanel" aria-labelledby="v-pills-accident-tab">
+        <div class='tableauPlaceholder' id='viz1648660765581' style='position: relative'><noscript><a href='#'><img alt='Dashboard 3 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;LA&#47;LA_Collision_Dashboard&#47;Dashboard3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='LA_Collision_Dashboard&#47;Dashboard3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;LA&#47;LA_Collision_Dashboard&#47;Dashboard3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1648660765581');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1277px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>  
       </div>
-      <div class="col-md-4">
-        <img src='confusion_matrix_auto.png'/>
+      <div class="tab-pane fade" id="pills-car" role="tabpanel" aria-labelledby="v-pills-car-tab">
+        <table class="table table-lg"
+          <tr>
+            <td> Confusion Matrix </td>
+            <td> Top Importance features </td>
+          </tr>
+          <tr>
+            <td> <img src="confusion_matrix_auto.png" /> </td>
+            <td> <img src="topfeaturerankingauto.png" /> </td>
+          </tr>
+          <tr>
+            <td> Classification report ML Passenger Cars </td>
+          </tr>
+          <tr>
+            <td> <img src="classification_report_auto.png" /> </td>
+          </tr>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="pills-truck" role="tabpanel" aria-labelledby="v-pills-truck-tab">
+        <table class="table table-sm"
+          <tr>
+            <td>Confusion Matrix</th>
+            <td>Top Importance features</th>
+          </tr>
+          <tr>
+            <td> <img src="confusion_matrix_truck.png" /> </td>
+            <td> <img src="topfeatureranking_truck.png" /> </td>
+          </tr>
+          <tr>
+            <td colspan="2"> Classification report ML Trucks</td>
+          </tr>
+          <tr>
+            <td colspan="2"> <img src="classification_report_truck.png" /> </td>
+          </tr>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="pills-mc" role="tabpanel" aria-labelledby="v-pills-mc-tab">
+        <table class="table table-lg"
+          <tr>
+            <td>Confusion Matrix</th>
+            <td>Top Importance features</th>
+          </tr>
+          <tr>
+            <td> <img src="confusion_matrix_mc.png" /> </td>
+            <td> <img src="topfeatureranking_mc.png" /> </td>
+          </tr>
+          <tr>
+            <td colspan="2"> Classification report ML Motorcycle/Scooters </td>
+          </tr>
+          <tr>
+            <td colspan="2"> <img src="classification_report_mc.png"/> </td>
+          </tr>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="pills-severity" role="tabpanel" aria-labelledby="v-pills-severity-tab">
+        <div class='tableauPlaceholder' id='viz1648663159251' style='position: relative'><noscript><a href='#'><img alt='Dashboard 4 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;LA&#47;LA_Collision_Dashboard&#47;Dashboard4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='LA_Collision_Dashboard&#47;Dashboard4' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;LA&#47;LA_Collision_Dashboard&#47;Dashboard4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1648663159251');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='2077px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>  
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <img src='classification_report.png'/>
-      </div>
-    </div>
-  </div>
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
-
 </html>
+
