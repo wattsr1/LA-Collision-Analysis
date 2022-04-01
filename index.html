@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet" href=".Dashboard/static/css/style.css">
 </head>
 <body>     
   <div class="container">
@@ -22,8 +22,6 @@
         <p>Machine Learning to Identify Accident Severity Factors</p>
       </div>
     </div>
-      <p> This project is looking at driver incidents to help vehicle manufacturers to evaluate what safety improvements would be the best to research and develop for the future based on the findings of accidents reported by the California Highway Patrol (CHP) in Los Angeles County. The data collected includes information about the incident including the severity of the accident and the safety equipment used. Based on the data collected the factors contributing to each incident will be evaluated to determine the most significant factors to resulting in severe and fatal incidents for cars, trucks and motorcycles. This data can then be used to identify what new safety features should be the focus for manufacturers for the future.
-      </p>
     <ul class="nav nav-pills col-mb-3" id="pills-tab" role="tablist">
       <li class="nav-item" role="presentation">
         <a class="nav-link active" id="pills-collision-tab" data-toggle="pill" href="#pills-collision" role="tab" aria-controls="pills-collision" aria-selected="true">Collision Data</a>
@@ -46,62 +44,70 @@
     </ul>
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-collision" role="tabpanel" aria-labelledby="v-pills-collision-tab">
+        <p> This project is looking at driver incidents to help vehicle manufacturers to evaluate what safety improvements would be the best to research and develop for the future based on the findings of accidents reported by the California Highway Patrol (CHP) in Los Angeles County. The data collected includes information about the incident including the severity of the accident and the safety equipment used. Based on the data collected the factors contributing to each incident will be evaluated to determine the most significant factors to resulting in severe and fatal incidents for cars, trucks and motorcycles. This data can then be used to identify what new safety features should be the focus for manufacturers for the future.
+        </p>
         <div class='tableauPlaceholder' id='viz1648659369924' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;LA&#47;LA_Collision_Dashboard&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='LA_Collision_Dashboard&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;LA&#47;LA_Collision_Dashboard&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' />  <param name='device' value='desktop' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1648659369924');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1427px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
       </div>
       <div class="tab-pane fade" id="pills-accident" role="tabpanel" aria-labelledby="v-pills-accident-tab">
         <div class='tableauPlaceholder' id='viz1648747636736' style='position: relative'><noscript><a href='#'><img alt='Dashboard 3 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;LA&#47;LA_Collision_Dashboard&#47;Dashboard3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='LA_Collision_Dashboard&#47;Dashboard3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;LA&#47;LA_Collision_Dashboard&#47;Dashboard3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' />  <param name='device' value='desktop' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1648747636736');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1227px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
       </div>
       <div class="tab-pane fade" id="pills-car" role="tabpanel" aria-labelledby="v-pills-car-tab">  
+        <p> The model created using the passenger car data had and accuracy of 75.96% which is a moderate indicator of predictability using this data.  The model was better at predicting the non-severe injuries with 24% false positives versus 27% false negatives for severe injures.  This is reflected in the F1 score that has an 86% for non-severe and 11% for severe injuries.  As this is an unbalanced model with severe injuries being represented less in the data it shows the challenges of creating an accurate model.  Based on the analysis the top importances identified using this model the factors that contributed to the predictions were identified. These can be investigated further to evaluate the key factor and how they correspond to severe injuries as observed in the data.
+        </p>
         <table class="table table-lg"
           <tr>
             <td> Confusion Matrix </td>
             <td> Top Importance features </td>
           </tr>
           <tr>
-            <td> <img src="static/images/confusion_matrix_auto.png" /> </td>
-            <td> <img src="static/images/topfeaturerankingauto.png" /> </td>
+            <td> <img src="Dashboard/static/images/confusion_matrix_auto.png" /> </td>
+            <td> <img src="Dashboard/static/images/topfeaturerankingauto.png" /> </td>
           </tr>
           <tr>
             <td colspan="2"> Classification report ML Passenger Cars </td>
           </tr>
           <tr>
-            <td colspan="2"> <img src="static/images/classification_report_auto.png" /> </td>
+            <td colspan="2"> <img src="Dashboard/static/images/classification_report_auto.png" /> </td>
           </tr>
         </table>
       </div>
       <div class="tab-pane fade" id="pills-truck" role="tabpanel" aria-labelledby="v-pills-truck-tab">
+        <p> The analysis of the collisions involving pickup trucks involved a much smaller sample size of only 9435 collisions.  This model had a higher accuracy than observed in the passenger car model with a calculated value of 77.6% which also makes it a moderately accurate model.  An analysis of the model show that it has an 28% false positive prediction and a 20% false negative indicating that this model was stronger at predicting severe injuries than observed in the model create using the passenger car data.  The top importances highlighted some key indicators for injury severity and using this information further analysis of these key factors in relation to the severity of the injuries can be conducted.  Again this model involved unbalanced data which adds to the challenge of the creation of an accurate predictive model.
+        </p>
         <table class="table table-sm"
           <tr>
             <td>Confusion Matrix</th>
             <td>Top Importance features</th>
           </tr>
           <tr>
-            <td> <img src="static/images/confusion_matrix_truck.png" /> </td>
-            <td> <img src="static/images/topfeatureranking_truck.png" /> </td>
+            <td> <img src="Dashboard/static/images/confusion_matrix_truck.png" /> </td>
+            <td> <img src="Dashboard/static/images/topfeatureranking_truck.png" /> </td>
           </tr>
           <tr>
             <td colspan="2"> Classification report ML Trucks</td>
           </tr>
           <tr>
-            <td colspan="2"> <img src="static/images/classification_report_truck.png" /> </td>
+            <td colspan="2"> <img src="Dashboard/static/images/classification_report_truck.png" /> </td>
           </tr>
         </table>
       </div>
       <div class="tab-pane fade" id="pills-mc" role="tabpanel" aria-labelledby="v-pills-mc-tab">
+        <p> The analysis of the motorcycle data contained a much smaller dataset containing only 2835 incidents.  The accuracy of the model was much lower at 66.14% making it a much less dependable model for predicting the severity of the injuries in the collision. This was evident in the 36% false positives observed from the testing set. There were 28% false negatives identified indicating that the model was better at predicting severe injuries however the model is limited in its predictive strength.  The top importances identified showed two categories contributed the most to the model which involved victim sobriety and if the victim was ejected from the vehicle.  These factors can be used for further analysis on the dataset to see how they contributed to the severity of the accidents.
+        </p>
         <table class="table table-lg"
           <tr>
             <td>Confusion Matrix</th>
             <td>Top Importance features</th>
           </tr>
           <tr>
-            <td> <img src="static/images/confusion_matrix_mc.png" /> </td>
-            <td> <img src="static/images/topfeatureranking_mc.png" /> </td>
+            <td> <img src="Dashboard/static/images/confusion_matrix_mc.png" /> </td>
+            <td> <img src="Dashboard/static/images/topfeatureranking_mc.png" /> </td>
           </tr>
           <tr>
             <td colspan="2"> Classification report ML Motorcycle/Scooters </td>
           </tr>
           <tr>
-            <td colspan="2"> <img src="static/images/classification_report_mc.png"/> </td>
+            <td colspan="2"> <img src="Dashboard/static/images/classification_report_mc.png"/> </td>
           </tr>
         </table>
       </div>
