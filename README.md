@@ -9,6 +9,10 @@ This project is looking at driver incidents to help vehicle manufacturers to eva
 ## Data Source
 The data for this project was obtained from the [Transportation Injury Mapping System](https://tims.berkeley.edu) database developed by researchers from University of California Berkley(UCBerkley) which was developed to collect accident data from the stat of California from data collected from the California Highway Patrol (CHP).  The data used in this analysis include accident data between 2017-2019 in Los Angeles County which contains detail from all accident that occurred in this region during the time period selected.  This data set will be at the core of our analysis to determine what factors were key in determining the severity of the accidents reported in this dataset.  This dataset was selected as it contained a significant number of accident events with data that contained details related to each event which would aid in the analysis being completed.
 
+The data cleaning and preprocessing into the machine learning model through postgreSQL was continuous process involving the integration of multiple technologies to complete.  Below is a schematic of the process followed during the project.
+
+<img src="Dashboard/Images/Methodology.jpg"/>
+
 ## Cleaning the dataset
 To complete the machine learning analysis using the dataset downloaded from the TIMS, the data needed to be cleaned to ensure that it could be integrated into the analysis script.  The data was divided into 3 datasets containing the crash data (crashes_df), party data (parties_df) and the victims (victims_df). To clean the data the following steps were complete.
 
@@ -78,17 +82,17 @@ With the data processed the dataset was split into the training and testing set 
         <td>SMOTEENN</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/confusion_matrix_ROS_auto.png" width="300"></td>
-        <td><img src="Dashboard/confusion_matrix_SMOTE_auto.png" width="300"></td>
-        <td><img src="Dashboard/confusion_matrix_SMOTEENN_auto.png" width="300"></td>
+        <td><img src="Dashboard/Images/confusion_matrix_ROS_auto.png" width="300"></td>
+        <td><img src="Dashboard/Images/confusion_matrix_SMOTE_auto.png" width="300"></td>
+        <td><img src="Dashboard/Images/confusion_matrix_SMOTEENN_auto.png" width="300"></td>
     </tr>
     <tr>
         <td>Balanced Random Forest Classifier</td>
         <td>Easy Ensemble Classifier</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/confusion_matrix_auto.png" width="300"></td>
-        <td><img src="Dashboard/confusion_matrix_EEC_auto.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_auto.png" width="300"></td>
+        <td><img src="Dashboard/Images/confusion_matrix_EEC_auto.png" width="300"></td>
     </tr>
 </table>
 
@@ -101,17 +105,17 @@ With the data processed the dataset was split into the training and testing set 
         <td>SMOTEENN</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/confusion_matrix_ROS_truck.png" width="300"></td>
-        <td><img src="Dashboard/confusion_matrix_SMOTE_truck.png" width="300"></td>
-        <td><img src="Dashboard/confusion_matrix_SMOTEENN_truck.png" width="300"></td>
+        <td><img src="Dashboard/Images/confusion_matrix_ROS_truck.png" width="300"></td>
+        <td><img src="Dashboard/Images/confusion_matrix_SMOTE_truck.png" width="300"></td>
+        <td><img src="Dashboard/Images/confusion_matrix_SMOTEENN_truck.png" width="300"></td>
     </tr>
     <tr>
         <td>Balanced Random Forest Classifier</td>
         <td>Easy Ensemble Classifier</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/confusion_matrix_truck.png" width="300"></td>
-        <td><img src="Dashboard/confusion_matrix_EEC_truck.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_truck.png" width="300"></td>
+        <td><img src="Dashboard/Images/confusion_matrix_EEC_truck.png" width="300"></td>
     </tr>
 </table>
 
@@ -124,17 +128,17 @@ With the data processed the dataset was split into the training and testing set 
         <td>SMOTEENN</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/confusion_matrix_ROS_mc.png" width="300"></td>
-        <td><img src="Dashboard/confusion_matrix_SMOTE_mc.png" width="300"></td>
-        <td><img src="Dashboard/confusion_matrix_SMOTEENN_truck.png" width="300"></td>
+        <td><img src="Dashboard/Images/confusion_matrix_ROS_mc.png" width="300"></td>
+        <td><img src="Dashboard/Images/confusion_matrix_SMOTE_mc.png" width="300"></td>
+        <td><img src="Dashboard/Images/confusion_matrix_SMOTEENN_truck.png" width="300"></td>
     </tr>
     <tr>
         <td>Balanced Random Forest Classifier</td>
         <td>Easy Ensemble Classifier</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/confusion_matrix_mc.png" width="300"></td>
-        <td><img src="Dashboard/confusion_matrix_EEC_mc.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_mc.png" width="300"></td>
+        <td><img src="Dashboard/Images/confusion_matrix_EEC_mc.png" width="300"></td>
     </tr>
 </table>
 
@@ -153,9 +157,9 @@ Analysis of the crash data using random forest classifier provides key predictiv
         <td>Results Motorcycles</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/topfeaturerankingauto.png" ></td>
-        <td><img src="Dashboard/topfeatureranking_truck.png"></td>
-        <td><img src="Dashboard/topfeatureranking_mc.png"></td>
+        <td><img src="Dashboard/static/images/topfeaturerankingauto.png" ></td>
+        <td><img src="Dashboard/static/images/topfeatureranking_truck.png"></td>
+        <td><img src="Dashboard/static/images/topfeatureranking_mc.png"></td>
     </tr>
 </table>
 
@@ -166,19 +170,19 @@ Each analysis contained data that contains the accuracy, and sensitivity and pre
         <td>Classification Report Automobiles</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/classification_report_auto.png" ></td>
+        <td><img src="Dashboard/static/images/classification_report_auto.png" ></td>
     </tr>
         <tr>
         <td>Classification Report Trucks</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/classification_report_truck.png" ></td>
+        <td><img src="Dashboard/static/images/classification_report_truck.png" ></td>
     </tr>
         <tr>
         <td>Classification Report Motorcycles</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/classification_report_mc.png" ></td>
+        <td><img src="Dashboard/static/images/classification_report_mc.png" ></td>
     </tr>
 </table>
 
