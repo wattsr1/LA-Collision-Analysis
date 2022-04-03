@@ -148,48 +148,81 @@ From the analysis of each method the EES models have the greatest predictive acc
 
 ### Balanced Random Forest Classifier
 
-Analysis of the crash data using random forest classifier provides key predictive indicators related to the factors determining the severity of the injuries incurred in the accidents.  From the analysis for each vehicle type the top 15 importances are shown in the charts below.
+Analysis of the crash data using random forest classifier provides key predictive indicators related to the factors determining the severity of the injuries incurred in the accidents.  From the analysis for each vehicle type the top 15 importances to highlight the factors that help predict the outcome of the accidents.  Grouping the data by victim vehicle type the model was trained to determine the accuracy and precision of the model and give insight into the key features used to predict the outcome.  
 
-<table>
+#### Passenger Car Analysis
+
+The machine learning model of passenger car collisions using the BRFC model created the following information.
+
+<table class="table table-lg"
     <tr>
-        <td>Results Automobiles</td>
-        <td>Results Trucks</td>
-        <td>Results Motorcycles</td>
+        <td> Confusion Matrix </td>
+        <td> Top Importance features </td>
     </tr>
     <tr>
-        <td><img src="Dashboard/static/images/topfeaturerankingauto.png" ></td>
-        <td><img src="Dashboard/static/images/topfeatureranking_truck.png"></td>
-        <td><img src="Dashboard/static/images/topfeatureranking_mc.png"></td>
+        <td> <img src="Dashboard/static/images/confusion_matrix_auto.png" /> </td>
+        <td> <img src="Dashboard/static/images/topfeaturerankingauto.png" /> </td>
+    </tr>
+    <tr>
+        <td colspan="2"> Classification report ML Passenger Cars </td>
+    </tr>
+    <tr>
+        <td colspan="2"> <img src="Dashboard/static/images/classification_report_auto.png" /> </td>
     </tr>
 </table>
 
-Each analysis contained data that contains the accuracy, and sensitivity and precision of the model 
+The model created using the passenger car data had and accuracy of 75.96% which is a moderate indicator of predictability using this data.  The model was better at predicting the non-severe injuries with 24% false positives versus 27% false negatives for severe injures.  This is reflected in the F1 score that has an 86% for non-severe and 11% for severe injuries.  As this is an unbalanced model with severe injuries being represented less in the data it shows the challenges of creating an accurate model.  Based on the analysis the top importances identified using this model the factors that contributed to the predictions were identified. These can be investigated further to evaluate the key factor and how they correspond to severe injuries as observed in the data.  
 
-<table>
+#### Pickup Truck Analysis
+
+Using the same machine learning BRFC model on collisions involving pickup trucks created the following information.
+
+<table class="table table-sm"
     <tr>
-        <td>Classification Report Automobiles</td>
-    </tr>
-    <tr>
-        <td><img src="Dashboard/static/images/classification_report_auto.png" ></td>
-    </tr>
-        <tr>
-        <td>Classification Report Trucks</td>
-    </tr>
-    <tr>
-        <td><img src="Dashboard/static/images/classification_report_truck.png" ></td>
-    </tr>
-        <tr>
-        <td>Classification Report Motorcycles</td>
+        <td>Confusion Matrix</th>
+        <td>Top Importance features</th>
     </tr>
     <tr>
-        <td><img src="Dashboard/static/images/classification_report_mc.png" ></td>
+        <td> <img src="Dashboard/static/images/confusion_matrix_truck.png" /> </td>
+        <td> <img src="Dashboard/static/images/topfeatureranking_truck.png" /> </td>
+    </tr>
+    <tr>
+        <td colspan="2"> Classification report ML Trucks</td>
+    </tr>
+    <tr>
+        <td colspan="2"> <img src="Dashboard/static/images/classification_report_truck.png" /> </td>
     </tr>
 </table>
+
+The analysis of the collisions involving pickup trucks involved a much smaller sample size of only 9435 collisions.  This model had a higher accuracy than observed in the passenger car model with a calculated value of 77.6% which also makes it a moderately accurate model.  An analysis of the model show that it has an 28% false positive prediction and a 20% false negative indicating that this model was stronger at predicting severe injuries than observed in the model create using the passenger car data.  The top importances highlighted some key indicators for injury severity and using this information further analysis of these key factors in relation to the severity of the injuries can be conducted.  Again this model involved unbalanced data which adds to the challenge of the creation of an accurate predictive model.
+
+#### Motorcycle/Scooter Analysis
+
+The final machine learning using the BRFC model on collisions involving motorcycles and scooters provided the following information.
+
+<table class="table table-lg"
+    <tr>
+        <td>Confusion Matrix</th>
+        <td>Top Importance features</th>
+    </tr>
+    <tr>
+        <td> <img src="Dashboard/static/images/confusion_matrix_mc.png" /> </td>
+        <td> <img src="Dashboard/static/images/topfeatureranking_mc.png" /> </td>
+    </tr>
+    <tr>
+        <td colspan="2"> Classification report ML Motorcycle/Scooters </td>
+    </tr>
+    <tr>
+        <td colspan="2"> <img src="Dashboard/static/images/classification_report_mc.png"/> </td>
+    </tr>
+</table>
+
+The analysis of the motorcycle data contained a much smaller dataset containing only 2835 incidents.  The accuracy of the model was much lower at 66.14% making it a much less dependable model for predicting the severity of the injuries in the collision. This was evident in the 36% false positives observed from the testing set. There were 28% false negatives identified indicating that the model was better at predicting severe injuries however the model is limited in its predictive strength.  The top importances identified showed two categories contributed the most to the model which involved victim sobriety and if the victim was ejected from the vehicle.  These factors can be used for further analysis on the dataset to see how they contributed to the severity of the accidents.
 
 ## Dashboard development
 
-Visualization of the data was prepared in Tableau to provide graphs illustrating patterns observed in the details provided from each accident.
-Users can filter on data visualizations to customize the interaction with the dataset.  The users can filter between the types of the automobile to view the results from the ML analysis and see the key factors that relate to the severity of accident data.
+To visualize the data, a combination of Tableau and HTML was used to create a dashboard that summarizes the finding from this analysis.  Using Tableau, interactive dashboards were created to display the data and allow users to filter on categories to customize the view.  The Tableau dashboards were integrated into a webpage which also includes details on the machine learning models and the analysis resulting from the models.  The [final website](https://wattsr1.github.io/LA-Collision-Analysis/) was deployed on Github for the public to access.  
+
 
 The Dashboard can be viewed here [L.A. Collision Dashboard](https://public.tableau.com/app/profile/joseph.minutaglio/viz/LA_Collision/)
 
