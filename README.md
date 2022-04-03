@@ -73,6 +73,8 @@ The data going into the models had minor preprocessing to remove missing data an
 
 With the data processed the dataset was split into the training and testing set using the "SEVERE_INJURY" column as the target using the train_test_split method from SKlearn. The training set consisted of 75% of the data and the testing set was 25% of the total dataset with it the date stratified to balance the number of severe injury between the testing and training sets. To determine the best methodology to create a machine learning model to give insight into the severity of injuries as a result of collisions.  As the number of severe and fatal injuries were much lower than the minor injuries the dataset was treated as an unbalanced model requiring resampling or ensemble methods to improve the predictability of the model.  
 
+The initial analysis was focused on the vehicle and the factors contributing to the collision.  This was targeted to determine factors linked to the vehicle that could be linked to the severity of the injuries incurred during the accident.
+
 #### Test Results Autos
 
 <table>
@@ -82,9 +84,9 @@ With the data processed the dataset was split into the training and testing set 
         <td>SMOTEENN</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/Images/confusion_matrix_ROS_auto.png" width="300"></td>
-        <td><img src="Dashboard/Images/confusion_matrix_SMOTE_auto.png" width="300"></td>
-        <td><img src="Dashboard/Images/confusion_matrix_SMOTEENN_auto.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_ROS_auto.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_SMOTE_auto.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_SMOTEENN_auto.png" width="300"></td>
     </tr>
     <tr>
         <td>Balanced Random Forest Classifier</td>
@@ -92,7 +94,7 @@ With the data processed the dataset was split into the training and testing set 
     </tr>
     <tr>
         <td><img src="Dashboard/static/images/confusion_matrix_auto.png" width="300"></td>
-        <td><img src="Dashboard/Images/confusion_matrix_EEC_auto.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_EEC_auto.png" width="300"></td>
     </tr>
 </table>
 
@@ -105,9 +107,9 @@ With the data processed the dataset was split into the training and testing set 
         <td>SMOTEENN</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/Images/confusion_matrix_ROS_truck.png" width="300"></td>
-        <td><img src="Dashboard/Images/confusion_matrix_SMOTE_truck.png" width="300"></td>
-        <td><img src="Dashboard/Images/confusion_matrix_SMOTEENN_truck.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_ROS_truck.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_SMOTE_truck.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_SMOTEENN_truck.png" width="300"></td>
     </tr>
     <tr>
         <td>Balanced Random Forest Classifier</td>
@@ -115,7 +117,7 @@ With the data processed the dataset was split into the training and testing set 
     </tr>
     <tr>
         <td><img src="Dashboard/static/images/confusion_matrix_truck.png" width="300"></td>
-        <td><img src="Dashboard/Images/confusion_matrix_EEC_truck.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_EEC_truck.png" width="300"></td>
     </tr>
 </table>
 
@@ -128,9 +130,9 @@ With the data processed the dataset was split into the training and testing set 
         <td>SMOTEENN</td>
     </tr>
     <tr>
-        <td><img src="Dashboard/Images/confusion_matrix_ROS_mc.png" width="300"></td>
-        <td><img src="Dashboard/Images/confusion_matrix_SMOTE_mc.png" width="300"></td>
-        <td><img src="Dashboard/Images/confusion_matrix_SMOTEENN_truck.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_ROS_mc.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_SMOTE_mc.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_SMOTEENN_truck.png" width="300"></td>
     </tr>
     <tr>
         <td>Balanced Random Forest Classifier</td>
@@ -138,7 +140,7 @@ With the data processed the dataset was split into the training and testing set 
     </tr>
     <tr>
         <td><img src="Dashboard/static/images/confusion_matrix_mc.png" width="300"></td>
-        <td><img src="Dashboard/Images/confusion_matrix_EEC_mc.png" width="300"></td>
+        <td><img src="Dashboard/static/images/confusion_matrix_EEC_mc.png" width="300"></td>
     </tr>
 </table>
 
@@ -171,7 +173,7 @@ The machine learning model of passenger car collisions using the BRFC model crea
     </tr>
 </table>
 
-The model created using the passenger car data had and accuracy of 75.96% which is a moderate indicator of predictability using this data.  The model was better at predicting the non-severe injuries with 24% false positives versus 27% false negatives for severe injures.  This is reflected in the F1 score that has an 86% for non-severe and 11% for severe injuries.  As this is an unbalanced model with severe injuries being represented less in the data it shows the challenges of creating an accurate model.  Based on the analysis the top importances identified using this model the factors that contributed to the predictions were identified. These can be investigated further to evaluate the key factor and how they correspond to severe injuries as observed in the data.  
+The model created using the passenger car data had and accuracy of 72.83% which is a moderate indicator of predictability using this data.  The model was better at predicting the non-severe injuries with 27% false positives versus 25% false negatives for severe injures.  This is reflected in the F1 score that has an 84% for non-severe and 10% for severe injuries.  As this is an unbalanced model with severe injuries being represented less in the data it shows the challenges of creating an accurate model.  Based on the analysis the top importances identified using this model the factors that contributed to the predictions were identified. These can be investigated further to evaluate the key factor and how they correspond to severe injuries as observed in the data.  
 
 #### Pickup Truck Analysis
 
@@ -194,7 +196,7 @@ Using the same machine learning BRFC model on collisions involving pickup trucks
     </tr>
 </table>
 
-The analysis of the collisions involving pickup trucks involved a much smaller sample size of only 9435 collisions.  This model had a higher accuracy than observed in the passenger car model with a calculated value of 77.6% which also makes it a moderately accurate model.  An analysis of the model show that it has an 28% false positive prediction and a 20% false negative indicating that this model was stronger at predicting severe injuries than observed in the model create using the passenger car data.  The top importances highlighted some key indicators for injury severity and using this information further analysis of these key factors in relation to the severity of the injuries can be conducted.  Again this model involved unbalanced data which adds to the challenge of the creation of an accurate predictive model.
+The analysis of the collisions involving pickup trucks involved a much smaller sample size of only 9435 collisions.  This model had a higher accuracy than observed in the passenger car model with a calculated value of 77.64% which also makes it a moderately accurate model.  An analysis of the model show that it has an 23% false positive prediction and a 19% false negative indicating that this model was stronger at predicting severe injuries than observed in the model create using the passenger car data.  The top importances highlighted some key indicators for injury severity and using this information further analysis of these key factors in relation to the severity of the injuries can be conducted.  Again this model involved unbalanced data which adds to the challenge of the creation of an accurate predictive model.
 
 #### Motorcycle/Scooter Analysis
 
@@ -217,7 +219,72 @@ The final machine learning using the BRFC model on collisions involving motorcyc
     </tr>
 </table>
 
-The analysis of the motorcycle data contained a much smaller dataset containing only 2835 incidents.  The accuracy of the model was much lower at 66.14% making it a much less dependable model for predicting the severity of the injuries in the collision. This was evident in the 36% false positives observed from the testing set. There were 28% false negatives identified indicating that the model was better at predicting severe injuries however the model is limited in its predictive strength.  The top importances identified showed two categories contributed the most to the model which involved victim sobriety and if the victim was ejected from the vehicle.  These factors can be used for further analysis on the dataset to see how they contributed to the severity of the accidents.
+The analysis of the motorcycle data contained a much smaller dataset containing only 2835 incidents.  The accuracy of the model was much lower at 63.18% making it a much less dependable model for predicting the severity of the injuries in the collision. This was evident in the 40% false positives observed from the testing set. There were 27% false negatives identified indicating that the model was better at predicting severe injuries however the model is limited in its predictive strength.  The top importances identified showed two categories contributed the most to the model which involved victim sobriety and if the victim was ejected from the vehicle.  These factors can be used for further analysis on the dataset to see how they contributed to the severity of the accidents.
+
+### Driver Factor Analysis
+
+Upon looking at the results of the conditions related to the vehicle with relation to the accidents, a focus on the driver controlled factors was evaluated to determine which factors would predict accident severity based on features surrounding the driver and passenger conditions.  Using the same methodology described above a model for each type of vehicle category was conducted determine the factors key to predicting the collision injury severity.
+
+#### Driver Analysis
+
+The machine learning model of passenger car collisions using the BRFC model created the following information.
+
+<table class="table table-lg"
+    <tr>
+        <td> Confusion Matrix </td>
+        <td> Top Importance features </td>
+    </tr>
+    <tr>
+        <td> <img src="Dashboard/static/images/confusion_matrix_auto_DRIVER.png" /> </td>
+        <td> <img src="Dashboard/static/images/topfeaturerankingauto_DRIVER.png" /> </td>
+    </tr>
+    <tr>
+        <td colspan="2"> Classification report ML Passenger Cars </td>
+    </tr>
+    <tr>
+        <td colspan="2"> <img src="Dashboard/static/images/classification_report_auto_DRIVER.png" /> </td>
+    </tr>
+</table>
+
+Using the same machine learning BRFC model on collisions involving pickup trucks created the following information.
+
+<table class="table table-sm"
+    <tr>
+        <td>Confusion Matrix</th>
+        <td>Top Importance features</th>
+    </tr>
+    <tr>
+        <td> <img src="Dashboard/static/images/confusion_matrix_truck_DRIVER.png" /> </td>
+        <td> <img src="Dashboard/static/images/topfeatureranking_truck_DRIVER.png" /> </td>
+    </tr>
+    <tr>
+        <td colspan="2"> Classification report ML Trucks</td>
+    </tr>
+    <tr>
+        <td colspan="2"> <img src="Dashboard/static/images/classification_report_truck_DRIVER.png" /> </td>
+    </tr>
+</table>
+
+The final machine learning using the BRFC model on collisions involving motorcycles and scooters provided the following information.
+
+<table class="table table-lg"
+    <tr>
+        <td>Confusion Matrix</th>
+        <td>Top Importance features</th>
+    </tr>
+    <tr>
+        <td> <img src="Dashboard/static/images/confusion_matrix_mc_DRIVER.png" /> </td>
+        <td> <img src="Dashboard/static/images/topfeatureranking_mc_DRIVER.png" /> </td>
+    </tr>
+    <tr>
+        <td colspan="2"> Classification report ML Motorcycle/Scooters </td>
+    </tr>
+    <tr>
+        <td colspan="2"> <img src="Dashboard/static/images/classification_report_mc_DRIVER.png"/> </td>
+    </tr>
+</table>
+
+The models created for the driver related features resulted in less accurate models that the vehicle factor models initially created.  The passenger car model produced an accuracy of 70.81% using the test dataset with 29% false positives and 26% false negatives.  The pickup truck data analysis produced a model with 71.97% accuracy with 28% false positives and 75% false negatives.  Finally, the motorcycle dataset produced a model with a 60.78% accuracy with 40% false positives and 37% false negatives.  All models showed some evidence of overtraining as the predicted accuracy was greater than the test accuracy.  Thought the models create all showed a reduced predictive accuracy they were all consistent in the identification of age as a major predictor of collision severity with it contributing as much as 40% to the predictive model.  The other factors however dropped significantly in comparison to age with low contributions to the prediction of the model.
 
 ## Dashboard development
 
