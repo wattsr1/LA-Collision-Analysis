@@ -290,13 +290,10 @@ The models created for the driver related features resulted in less accurate mod
 
 To visualize the data, a combination of Tableau and HTML was used to create a dashboard that summarizes the finding from this analysis.  Using Tableau, interactive dashboards were created to display the data and allow users to filter on categories to customize the view.  The Tableau dashboards were integrated into a webpage which also includes details on the machine learning models and the analysis resulting from the models.  The [final website](https://wattsr1.github.io/LA-Collision-Analysis/) was deployed on Github for the public to access.  
 
-The Dashboard can be viewed here [L.A. Collision Dashboard](https://public.tableau.com/app/profile/joseph.minutaglio/viz/LA_Collision/)
-
-The final dashboard will contain a Tableau story to summarize the project.  [Planning for the story is being developed using Google Slides](https://docs.google.com/presentation/d/1w6Vg1khr1k3L5puMNUuJ7pDtrvq1OjM4qtMz7u7uars/edit?usp=sharing)
 
 ## Presentation Draft
 
-A brief presentation of the project has been drafted on PowerPoint.  [The draft can be viewed online](Resources/LACollision_Analysis_Summary.pptx)
+A brief presentation of the project has been drafted on Google Slides.  [The draft can be viewed online](https://docs.google.com/presentation/d/1KghLo6V3xyFp05sskCO4CUClffk0LA8iuVf46Gt23bM/edit?usp=sharing)
 
 
 
