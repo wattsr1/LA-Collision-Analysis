@@ -146,7 +146,7 @@ The initial analysis was focused on the vehicle and the factors contributing to 
 
 ### Model Selection
 
-From the analysis of each method the EES models have the greatest predictive accuracy however the BRFC model, similar predictive strength coupled with the ability to share key importances related to the features used in the model gives greater insights for the analysis.
+From the analysis of each method the EES models have the greatest predictive accuracy however the Balanced Random Forest Classifier (BRFC) model, similar predictive strength coupled with the ability to share key importances related to the features used in the model gives greater insights for the analysis.  The BRFC model provided good accuracy and improved precision for both the severe and non-injury predictions which made it the best choice overall.  The BRFC however is limited as there were cases of overtraining evident in the motorcycle data due to the smaller dataset and limited severe injury cases and minor anomalies in the data were amplified due to the imbalanced dataset.  Additionally, the analysis was difficult to explain due to the randomness of the algorithm.
 
 ### Balanced Random Forest Classifier
 
